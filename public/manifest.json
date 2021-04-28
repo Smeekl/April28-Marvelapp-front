@@ -1,0 +1,8 @@
+{
+  "short_name": "MarvelApp",
+  "name": "MarvelApp",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#27cffe",
+  "background_color": "#ffffff"
+}

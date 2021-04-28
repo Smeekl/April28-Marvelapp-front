@@ -1,0 +1,1 @@
+export const FETCH_FAMILIES = 'FETCH_FAMILIES';
