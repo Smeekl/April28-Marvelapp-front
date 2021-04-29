@@ -10,7 +10,7 @@ type Criteria = {
   title: string;
 };
 
-const FamilyForm: FC = () => {
+const Family: FC = () => {
   const {
     register,
     handleSubmit,
@@ -20,14 +20,10 @@ const FamilyForm: FC = () => {
   const history = useHistory();
 
   useEffect(() => {
-    axiosInstance
-      .get(`${config.API_URL}/criteria`)
-      .then((data) => setCriteria(data.data));
+    axiosInstance.get(`criteria`).then((data) => setCriteria(data.data));
   }, []);
 
-  const onSubmit = (data: any) => {
-    axiosInstance.post(`family`, data).then((r) => history.push("/"));
-  };
+  const onSubmit = (data: any) => axiosInstance.post(`/family`, data);
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
@@ -68,4 +64,4 @@ const FamilyForm: FC = () => {
   );
 };
 
-export default FamilyForm;
+export default Family;

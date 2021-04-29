@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 import './Header.css';
-import {ButtonsCreates} from './MainPage';
+import {ButtonsCreates} from './Content';
 
 type Tab = {
   key: ButtonsCreates;

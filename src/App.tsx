@@ -1,39 +1,42 @@
-import React from 'react';
-import {Provider} from 'react-redux';
-import {store} from './store';
+import React from "react";
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Redirect
-} from 'react-router-dom';
-import MainPage from "./components/MainPage";
+  Redirect,
+} from "react-router-dom";
+import Content from "./components/Content";
 import FamilyForm from "./components/FamilyForm";
 import PlacementForm from "./components/PlacementForm";
-;
+import Family from "./components/Family";
+import Placement from "./components/Placement";
 
 function App() {
   return (
-    <Provider store={store}>
-      <Router>
-        <Switch>
-          <Route path="/" exact>
-            <MainPage/>
-          </Route>
-          <Route path="/new-family">
-            <FamilyForm/>
-          </Route>
-          <Route path="/new-placement">
-            <PlacementForm/>
-          </Route>
-          <Redirect
-            to={{
-              pathname: '/'
-            }}
-          />
-        </Switch>
-      </Router>
-    </Provider>
+    <Router>
+      <Switch>
+        <Route path="/" exact>
+          <Content />
+        </Route>
+        <Route path="/new-family">
+          <FamilyForm />
+        </Route>
+        <Route path="/new-placement">
+          <PlacementForm />
+        </Route>
+        <Route path="/family">
+          <Family />
+        </Route>
+        <Route path="/placement/:id">
+          <Placement />
+        </Route>
+        <Redirect
+          to={{
+            pathname: "/",
+          }}
+        />
+      </Switch>
+    </Router>
   );
 }
 
